@@ -1,0 +1,48 @@
+#Play a guessing game with user by having the enter their name, then guess a number and give them hints based off the number they guessed.
+
+
+
+print "Guess the number game! \n";
+
+print "Please enter your name: \n";
+$name = <STDIN>;
+chomp $name;
+#Ask user for name
+
+$correctnumber=11;
+$number= 1;
+#This is the correct number for the user to guess.
+
+while($number !=0)
+{
+{
+print "Please enter a number 1-17 (Press 0 to Exit).\n";
+$number=<STDIN>;
+chomp $number;
+#ask user to guess the number and to enter 0 if they would like to exit.
+}
+if($number ==0)
+{
+print "$name, you entered $number. Exiting program\n";
+exit;
+#if number is 0 program will exit
+}
+
+if($number==$correctnumber)
+{
+print "$name you guessed the correct number! It is $number.\n";
+exit;
+}
+#if number guessed is correct the program will display this messaging saying the user guessed correct number then exit program. 
+
+elsif($number > $correctnumber)
+{
+print "$number is TOO HIGH.\n";
+}
+#if number guessed is above correct number program will display the hint that the number guessed is too high and have them guess again.
+elsif($number < $correctnumber)
+{
+print"$number is too low\n";
+#if number guessed is below correct number program will display the hint that the number guessed is too low and have them guess again. 
+}
+}
